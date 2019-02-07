@@ -1,0 +1,57 @@
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+//setting request method
+//API endpoint for API sandbox 
+xhr.open("GET", "https://sandbox.api.sap.com/successfactors/odata/v2/User");
+
+//API endpoint with optional query parameters
+//xhr.open("GET", "https://sandbox.api.sap.com/successfactors/odata/v2/User?$orderby=array&$select=array");
+//To view the complete list of query parameters, see its API definition.
+
+//Available API Endpoints
+//https://api2.successfactors.eu/odata/v2
+//https://apisalesdemo2.successfactors.eu/odata/v2
+//https://api2preview.sapsf.eu/odata/v2
+//https://api4.successfactors.com/odata/v2
+//https://apisalesdemo4.successfactors.com/odata/v2
+//https://api4preview.sapsf.com/odata/v2
+//https://api5.successfactors.eu/odata/v2
+//https://api8.successfactors.com/odata/v2
+//https://apisalesdemo8.successfactors.com/odata/v2
+//https://api8preview.sapsf.com/odata/v2
+//https://api10.successfactors.com/odata/v2
+//https://api10preview.sapsf.com/odata/v2
+//https://api012.successfactors.eu/odata/v2
+//https://apirot.successfactors.eu/odata/v2
+//https://api12preview.sapsf.eu/odata/v2
+//https://api15.sapsf.cn/odata/v2
+//https://api16.sapsf.eu/odata/v2
+//https://api17preview.sapsf.com/odata/v2
+//https://api17.sapsf.com/odata/v2
+//https://api18preview.sapsf.com/odata/v2
+//https://api18.sapsf.com/odata/v2
+
+//adding request headers
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Accept", "application/json");
+//API Key for API Sandbox
+xhr.setRequestHeader("EV5GbTTyYC5XOZpxzlPD4dfeNeQvH8m9", "EV5GbTTyYC5XOZpxzlPD4dfeNeQvH8m9");
+
+
+//Available Security Schemes for productive API Endpoints
+//Basic Authentication
+
+//Basic Auth : provide username:password in Base64 encoded in Authorization header
+//xhr.setRequestHeader("Authorization", "Basic <Base64 encoded value>");
+
+//sending request
+xhr.send(data);
